@@ -1,0 +1,526 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="800" height="400">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .scene {
+          width: 800px;
+          height: 400px;
+          position: relative;
+          overflow: hidden;
+          background: #0a1628;
+          background-image:
+            radial-gradient(ellipse 70% 60% at 50% 50%, rgba(20, 30, 70, 0.8) 0%, transparent 70%),
+            radial-gradient(ellipse 40% 35% at 50% 50%, rgba(15, 45, 80, 0.5) 0%, transparent 60%);
+        }
+
+        /* ====== CENTRAL ENERGY CORE ====== */
+        .core {
+          position: absolute;
+          top: 50%; left: 50%;
+          width: 200px; height: 200px;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(100, 200, 220, 0.08) 0%, transparent 70%);
+          animation: corePulse 4s ease-in-out infinite;
+        }
+        .core-inner {
+          position: absolute;
+          top: 50%; left: 50%;
+          width: 100px; height: 100px;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(180, 140, 255, 0.1) 0%, transparent 70%);
+          animation: corePulse 3s ease-in-out infinite 0.5s;
+        }
+        @keyframes corePulse {
+          0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+          50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+        }
+
+        /* ====== ROTATING GEOMETRIC RINGS ====== */
+        .ring {
+          position: absolute;
+          top: 50%; left: 50%;
+          border-radius: 50%;
+          border: 1px solid rgba(100, 200, 220, 0.08);
+        }
+        .ring-1 {
+          width: 300px; height: 300px;
+          transform: translate(-50%, -50%);
+          border-style: dashed;
+          border-color: rgba(100, 200, 220, 0.07);
+          animation: spinSlow 60s linear infinite;
+        }
+        .ring-2 {
+          width: 450px; height: 450px;
+          transform: translate(-50%, -50%);
+          border-style: dotted;
+          border-color: rgba(180, 140, 255, 0.06);
+          animation: spinSlow 80s linear infinite reverse;
+        }
+        .ring-3 {
+          width: 600px; height: 600px;
+          transform: translate(-50%, -50%);
+          border-color: rgba(100, 200, 220, 0.04);
+          animation: spinSlow 100s linear infinite;
+        }
+        @keyframes spinSlow {
+          to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* ====== ENERGY PULSE WAVES ====== */
+        .pulse-ring {
+          position: absolute;
+          top: 50%; left: 50%;
+          border-radius: 50%;
+          border: 1px solid rgba(100, 200, 220, 0.15);
+          animation: pulseExpand 5s ease-out infinite;
+        }
+        .pulse-ring-1 { width: 10px; height: 10px; animation-delay: 0s; }
+        .pulse-ring-2 { width: 10px; height: 10px; animation-delay: 1.6s; }
+        .pulse-ring-3 { width: 10px; height: 10px; animation-delay: 3.2s; }
+        @keyframes pulseExpand {
+          0% { width: 10px; height: 10px; transform: translate(-50%, -50%); opacity: 0.6; }
+          100% { width: 500px; height: 500px; transform: translate(-50%, -50%); opacity: 0; }
+        }
+
+        /* ====== CONSTELLATION STARS + CONNECTIONS ====== */
+        .constellation {
+          position: absolute;
+          inset: 0;
+        }
+        .star {
+          position: absolute;
+          border-radius: 50%;
+          background: #fff;
+          animation: starGlow 3s ease-in-out infinite alternate;
+        }
+        /* cluster top-left — like a small dipper */
+        .s1 { width: 3px; height: 3px; top: 55px; left: 65px; animation-delay: 0s; }
+        .s2 { width: 2px; height: 2px; top: 40px; left: 120px; animation-delay: 0.4s; }
+        .s3 { width: 3px; height: 3px; top: 70px; left: 170px; animation-delay: 0.8s; }
+        .s4 { width: 2px; height: 2px; top: 45px; left: 210px; animation-delay: 0.2s; }
+        /* cluster top-right */
+        .s5 { width: 2px; height: 2px; top: 35px; left: 580px; animation-delay: 1.2s; }
+        .s6 { width: 3px; height: 3px; top: 65px; left: 640px; animation-delay: 0.6s; }
+        .s7 { width: 2px; height: 2px; top: 30px; left: 700px; animation-delay: 1.0s; }
+        .s8 { width: 2px; height: 2px; top: 80px; left: 720px; animation-delay: 0.3s; }
+        /* scattered */
+        .s9  { width: 2px; height: 2px; top: 120px; left: 40px; animation-delay: 1.5s; }
+        .s10 { width: 1px; height: 1px; top: 90px; left: 400px; animation-delay: 0.9s; }
+        .s11 { width: 2px; height: 2px; top: 310px; left: 100px; animation-delay: 1.8s; }
+        .s12 { width: 1px; height: 1px; top: 340px; left: 680px; animation-delay: 0.7s; }
+        .s13 { width: 2px; height: 2px; top: 320px; left: 740px; animation-delay: 2.0s; }
+        .s14 { width: 3px; height: 3px; top: 350px; left: 50px; animation-delay: 0.5s; }
+        .s15 { width: 1px; height: 1px; top: 280px; left: 760px; animation-delay: 1.3s; }
+
+        @keyframes starGlow {
+          0% { opacity: 0.3; box-shadow: 0 0 2px rgba(255,255,255,0.3); }
+          100% { opacity: 1; box-shadow: 0 0 6px rgba(180, 200, 255, 0.6); }
+        }
+
+        /* constellation lines — drawn with pseudo-free approach using thin divs */
+        .cline {
+          position: absolute;
+          height: 1px;
+          background: rgba(100, 180, 220, 0.08);
+          transform-origin: left center;
+        }
+        /* top-left cluster connections */
+        .cl1 { top: 56px; left: 67px; width: 60px; transform: rotate(-16deg); }
+        .cl2 { top: 41px; left: 122px; width: 55px; transform: rotate(30deg); }
+        .cl3 { top: 70px; left: 172px; width: 48px; transform: rotate(-32deg); }
+        /* top-right cluster */
+        .cl4 { top: 37px; left: 582px; width: 70px; transform: rotate(25deg); }
+        .cl5 { top: 66px; left: 642px; width: 68px; transform: rotate(-28deg); }
+        .cl6 { top: 31px; left: 702px; width: 25px; transform: rotate(78deg); }
+
+        /* ====== FLOATING SPIRIT PARTICLES ====== */
+        .spirit {
+          position: absolute;
+          border-radius: 50%;
+          animation: spiritFloat linear infinite;
+        }
+        /* warm golden ones — like floating embers or forest spirits */
+        .sp1 {
+          width: 4px; height: 4px;
+          background: radial-gradient(circle, rgba(255, 200, 100, 0.8), transparent);
+          box-shadow: 0 0 8px rgba(255, 200, 100, 0.4);
+          top: 70%; left: 10%;
+          animation-duration: 12s; animation-delay: 0s;
+        }
+        .sp2 {
+          width: 3px; height: 3px;
+          background: radial-gradient(circle, rgba(255, 180, 80, 0.7), transparent);
+          box-shadow: 0 0 6px rgba(255, 180, 80, 0.3);
+          top: 80%; left: 30%;
+          animation-duration: 15s; animation-delay: -3s;
+        }
+        .sp3 {
+          width: 5px; height: 5px;
+          background: radial-gradient(circle, rgba(255, 210, 120, 0.7), transparent);
+          box-shadow: 0 0 10px rgba(255, 210, 120, 0.3);
+          top: 75%; left: 55%;
+          animation-duration: 11s; animation-delay: -6s;
+        }
+        .sp4 {
+          width: 3px; height: 3px;
+          background: radial-gradient(circle, rgba(255, 190, 90, 0.8), transparent);
+          box-shadow: 0 0 7px rgba(255, 190, 90, 0.4);
+          top: 85%; left: 75%;
+          animation-duration: 14s; animation-delay: -2s;
+        }
+        .sp5 {
+          width: 4px; height: 4px;
+          background: radial-gradient(circle, rgba(255, 200, 100, 0.6), transparent);
+          box-shadow: 0 0 8px rgba(255, 200, 100, 0.3);
+          top: 70%; left: 90%;
+          animation-duration: 13s; animation-delay: -8s;
+        }
+        /* cool blue-green ones */
+        .sp6 {
+          width: 3px; height: 3px;
+          background: radial-gradient(circle, rgba(100, 220, 200, 0.7), transparent);
+          box-shadow: 0 0 8px rgba(100, 220, 200, 0.3);
+          top: 65%; left: 20%;
+          animation-duration: 16s; animation-delay: -4s;
+        }
+        .sp7 {
+          width: 4px; height: 4px;
+          background: radial-gradient(circle, rgba(140, 160, 255, 0.6), transparent);
+          box-shadow: 0 0 8px rgba(140, 160, 255, 0.3);
+          top: 78%; left: 45%;
+          animation-duration: 12s; animation-delay: -7s;
+        }
+        .sp8 {
+          width: 3px; height: 3px;
+          background: radial-gradient(circle, rgba(100, 200, 220, 0.7), transparent);
+          box-shadow: 0 0 6px rgba(100, 200, 220, 0.3);
+          top: 82%; left: 65%;
+          animation-duration: 14s; animation-delay: -1s;
+        }
+        @keyframes spiritFloat {
+          0% { transform: translate(0, 0) scale(1); opacity: 0; }
+          10% { opacity: 1; }
+          50% { transform: translate(30px, -180px) scale(0.8); opacity: 0.7; }
+          80% { opacity: 0.3; }
+          100% { transform: translate(-10px, -350px) scale(0.3); opacity: 0; }
+        }
+
+        /* ====== FLOATING RUNE SHAPES ====== */
+        .rune {
+          position: absolute;
+          border: 1px solid;
+          opacity: 0.06;
+          animation: runeDrift 20s ease-in-out infinite;
+        }
+        .rune-diamond {
+          width: 20px; height: 20px;
+          border-color: rgba(180, 140, 255, 0.5);
+          transform: rotate(45deg);
+          top: 15%; left: 8%;
+          animation-delay: 0s;
+        }
+        .rune-diamond-2 {
+          width: 14px; height: 14px;
+          border-color: rgba(100, 200, 220, 0.5);
+          transform: rotate(45deg);
+          top: 75%; right: 8%;
+          animation-delay: -8s;
+        }
+        .rune-circle {
+          width: 24px; height: 24px;
+          border-color: rgba(255, 200, 100, 0.4);
+          border-radius: 50%;
+          bottom: 20%; left: 5%;
+          animation-delay: -4s;
+        }
+        .rune-circle-2 {
+          width: 16px; height: 16px;
+          border-color: rgba(180, 140, 255, 0.4);
+          border-radius: 50%;
+          top: 10%; right: 12%;
+          animation-delay: -12s;
+        }
+        .rune-tri {
+          width: 0; height: 0;
+          border: none;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-bottom: 17px solid rgba(100, 200, 220, 0.06);
+          top: 25%; right: 5%;
+          animation-delay: -6s;
+        }
+        .rune-tri-2 {
+          width: 0; height: 0;
+          border: none;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-bottom: 14px solid rgba(255, 200, 100, 0.06);
+          bottom: 30%; left: 12%;
+          animation-delay: -15s;
+        }
+        @keyframes runeDrift {
+          0%, 100% { transform: translateY(0) rotate(45deg); opacity: 0.06; }
+          25% { transform: translateY(-12px) rotate(50deg); opacity: 0.1; }
+          75% { transform: translateY(8px) rotate(40deg); opacity: 0.04; }
+        }
+
+        /* ====== CIRCUIT TRACES ====== */
+        .trace {
+          position: absolute;
+          background: rgba(100, 200, 220, 0.04);
+        }
+        .trace-h1 { width: 120px; height: 1px; top: 30%; left: 0; }
+        .trace-h2 { width: 80px; height: 1px; top: 70%; right: 0; }
+        .trace-h3 { width: 60px; height: 1px; top: 45%; left: 0; }
+        .trace-v1 { width: 1px; height: 80px; top: 0; left: 25%; }
+        .trace-v2 { width: 1px; height: 60px; bottom: 0; right: 20%; }
+        .trace-v3 { width: 1px; height: 100px; top: 0; right: 30%; }
+        /* nodes at trace endpoints */
+        .node {
+          position: absolute;
+          width: 4px; height: 4px;
+          border-radius: 50%;
+          background: rgba(100, 200, 220, 0.1);
+          animation: nodeFlicker 3s ease-in-out infinite;
+        }
+        .n1 { top: calc(30% - 1.5px); left: 120px; animation-delay: 0s; }
+        .n2 { top: calc(70% - 1.5px); right: 80px; animation-delay: -1s; }
+        .n3 { top: calc(45% - 1.5px); left: 60px; animation-delay: -2s; }
+        .n4 { top: 80px; left: calc(25% - 1.5px); animation-delay: -0.5s; }
+        .n5 { bottom: 60px; right: calc(20% - 1.5px); animation-delay: -1.5s; }
+        @keyframes nodeFlicker {
+          0%, 100% { opacity: 0.3; box-shadow: none; }
+          50% { opacity: 1; box-shadow: 0 0 6px rgba(100, 200, 220, 0.3); }
+        }
+
+        /* ====== FOREGROUND TEXT (restored Space Mono) ====== */
+        .content {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          z-index: 2;
+        }
+
+        .typewriter {
+          display: flex;
+          align-items: baseline;
+          gap: 0;
+          margin-bottom: 24px;
+        }
+
+        .hi {
+          font-family: 'Space Mono', monospace;
+          font-size: 64px;
+          font-weight: 700;
+          color: #e4e4e7;
+          opacity: 0;
+          animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.6s;
+        }
+
+        .comma {
+          font-family: 'Space Mono', monospace;
+          font-size: 64px;
+          font-weight: 700;
+          color: #64dcc8;
+          opacity: 0;
+          animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 1.0s;
+        }
+
+        .im {
+          font-family: 'Space Mono', monospace;
+          font-size: 64px;
+          font-weight: 700;
+          color: #e4e4e7;
+          margin-left: 20px;
+          opacity: 0;
+          animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 1.3s;
+        }
+
+        .name {
+          display: flex;
+          margin-left: 20px;
+        }
+        .name span {
+          font-family: 'Space Mono', monospace;
+          font-size: 64px;
+          font-weight: 700;
+          display: inline-block;
+          opacity: 0;
+          animation: letterDrop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .name .l-E {
+          color: #c084fc;
+          animation-delay: 1.7s;
+        }
+        .name .l-r {
+          color: #a78bfa;
+          animation-delay: 1.85s;
+        }
+        .name .l-i {
+          color: #64dcc8;
+          animation-delay: 2.0s;
+        }
+        .name .l-c {
+          color: #60b0f0;
+          animation-delay: 2.15s;
+        }
+
+        @keyframes popIn {
+          0% { opacity: 0; transform: scale(0.5) translateY(10px); }
+          100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @keyframes letterDrop {
+          0% { opacity: 0; transform: translateY(-30px) rotate(-10deg); }
+          60% { transform: translateY(3px) rotate(1deg); }
+          100% { opacity: 1; transform: translateY(0) rotate(0deg); }
+        }
+
+        .wave {
+          display: inline-block;
+          font-size: 56px;
+          margin-left: 12px;
+          opacity: 0;
+          animation: waveIn 0.5s ease forwards 2.4s, waveHand 1s ease-in-out 2.9s 3;
+          transform-origin: 70% 70%;
+        }
+        @keyframes waveIn {
+          from { opacity: 0; transform: scale(0) rotate(-20deg); }
+          to { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+        @keyframes waveHand {
+          0%, 100% { transform: rotate(0deg); }
+          25% { transform: rotate(20deg); }
+          75% { transform: rotate(-15deg); }
+        }
+
+        .cursor {
+          display: inline-block;
+          width: 3px;
+          height: 50px;
+          background: #64dcc8;
+          margin-left: 6px;
+          vertical-align: bottom;
+          opacity: 0;
+          animation: cursorAppear 0.01s forwards 2.3s, blink 1s step-end infinite 2.3s;
+        }
+        @keyframes cursorAppear { to { opacity: 1; } }
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+
+        .underline {
+          width: 420px;
+          height: 2px;
+          background: linear-gradient(90deg, #c084fc, #64dcc8, #ffc864);
+          transform: scaleX(0);
+          transform-origin: left;
+          animation: drawLine 0.8s ease forwards 2.6s;
+        }
+        @keyframes drawLine {
+          to { transform: scaleX(1); }
+        }
+      </style>
+
+      <div class="scene">
+        <!-- energy core -->
+        <div class="core"></div>
+        <div class="core-inner"></div>
+
+        <!-- rotating rings -->
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+
+        <!-- pulse waves -->
+        <div class="pulse-ring pulse-ring-1"></div>
+        <div class="pulse-ring pulse-ring-2"></div>
+        <div class="pulse-ring pulse-ring-3"></div>
+
+        <!-- constellations -->
+        <div class="constellation">
+          <div class="star s1"></div>
+          <div class="star s2"></div>
+          <div class="star s3"></div>
+          <div class="star s4"></div>
+          <div class="star s5"></div>
+          <div class="star s6"></div>
+          <div class="star s7"></div>
+          <div class="star s8"></div>
+          <div class="star s9"></div>
+          <div class="star s10"></div>
+          <div class="star s11"></div>
+          <div class="star s12"></div>
+          <div class="star s13"></div>
+          <div class="star s14"></div>
+          <div class="star s15"></div>
+          <div class="cline cl1"></div>
+          <div class="cline cl2"></div>
+          <div class="cline cl3"></div>
+          <div class="cline cl4"></div>
+          <div class="cline cl5"></div>
+          <div class="cline cl6"></div>
+        </div>
+
+        <!-- floating spirit particles -->
+        <div class="spirit sp1"></div>
+        <div class="spirit sp2"></div>
+        <div class="spirit sp3"></div>
+        <div class="spirit sp4"></div>
+        <div class="spirit sp5"></div>
+        <div class="spirit sp6"></div>
+        <div class="spirit sp7"></div>
+        <div class="spirit sp8"></div>
+
+        <!-- rune shapes -->
+        <div class="rune rune-diamond"></div>
+        <div class="rune rune-diamond-2"></div>
+        <div class="rune rune-circle"></div>
+        <div class="rune rune-circle-2"></div>
+        <div class="rune-tri"></div>
+        <div class="rune-tri-2"></div>
+
+        <!-- circuit traces -->
+        <div class="trace trace-h1"></div>
+        <div class="trace trace-h2"></div>
+        <div class="trace trace-h3"></div>
+        <div class="trace trace-v1"></div>
+        <div class="trace trace-v2"></div>
+        <div class="trace trace-v3"></div>
+        <div class="node n1"></div>
+        <div class="node n2"></div>
+        <div class="node n3"></div>
+        <div class="node n4"></div>
+        <div class="node n5"></div>
+
+        <!-- text -->
+        <div class="content">
+          <div class="typewriter">
+            <span class="hi">Hi</span>
+            <span class="comma">,</span>
+            <span class="im">I'm</span>
+            <div class="name">
+              <span class="l-E">E</span>
+              <span class="l-r">r</span>
+              <span class="l-i">i</span>
+              <span class="l-c">c</span>
+            </div>
+            <span class="wave">&#x1F44B;</span>
+            <span class="cursor"></span>
+          </div>
+          <div class="underline"></div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
