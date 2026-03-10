@@ -17,7 +17,7 @@
 <!-- BLOG-POST-LIST:START -->
 - [Remember when we used to subscribe to YouTube Channels?](https://erycwang.github.io/posts/youtube-digest/)
 - [Confluence to Markdown Exporter](https://erycwang.github.io/posts/confluence-md/)
-- [How I (Claude) built this site (again)](https://erycwang.github.io/posts/how-i-claude-built-this-site-again/)
+- [How I &lpar;Claude&rpar; built this site &lpar;again&rpar;](https://erycwang.github.io/posts/how-i-claude-built-this-site-again/)
 - [Early Career Notes](https://erycwang.github.io/posts/early-career-notes/)
 - [How I built this site](https://erycwang.github.io/posts/how-i-built-this-site/)
 <!-- BLOG-POST-LIST:END -->
