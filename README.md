@@ -10,7 +10,7 @@
 |---|---|---|
 | 🎬 | [**youtube-digest**](https://github.com/erycwang/youtube-digest) | Daily YouTube digest agent — curated email summaries powered by Claude |
 | 🌐 | [**erycwang.github.io**](https://github.com/erycwang/erycwang.github.io) | Personal site built with Astro |
-| 🤖 | [**sql-support-bot**](https://github.com/erycwang/sql-support-bot) | Little exercise for a multi-agent customer support chatbot using LangGraph + LaunchDarkly AI Configs and tracing |
+| 🤖 | [**harmony-demo**](https://github.com/erycwang/harmony-demo) | Multi-agent customer support chatbot using LangGraph and SQL database |
 
 ### Recent Blog Posts
 
